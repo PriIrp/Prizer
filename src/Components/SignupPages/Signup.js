@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Context/AuthContext';
-import './Home.css';
+import './Signup.css';
 
-function Home() {
+function Signup() {
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -27,19 +27,19 @@ function Home() {
 
   return (
     
-    <div className="Home">
+    <div className="SignupPage">
 
-      <div className='home_header'> Welcome to Zello </div>
+      <div className='header'> Welcome to Zello </div>
 
-      <div className='loginBox'> 
+      <div className='card'> 
 
-        <h3 className='loginBox_header'> Sign Up </h3>
-        <h4 className= 'loginBox_header' id= 'lowerBody'>to continue to Zello</h4>
+        <h3 className='card_header'> Create an Account </h3>
+        <h4 className= 'card_header' id= 'lowerBody'>to continue to Zello</h4>
         
         <form onSubmit={handleSubmit}>
-          <input className='login_input' ref={emailRef} type='text' placeholder='Email' />
-          <input className='login_input' ref={passwordRef} type='password' placeholder='Password' />
-          <button disabled={loading} className='login_button' type='submit'> Login </button>
+          <input className='textField' ref={emailRef} type='text' placeholder='Email' />
+          <input className='textField' ref={passwordRef} type='password' placeholder='Password' />
+          <button disabled={loading} className='button' type='submit'> Create Account </button>
         </form>
 
       </div>
@@ -47,4 +47,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Signup;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { AuthProvider } from '../../Context/AuthContext';
-import Home from '../HomePages/Home'
+import Signup from '../SignupPages/Signup'
+import Login from '../LoginPage/Login'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -11,8 +12,8 @@ function App() {
       <div className='app'>
         <Router>
           <Routes>
-            <Route exact path='/' element={<Home/>} />
-            {/* <Route path='/login' element={<Login/>} /> */}
+            <Route exact path='/' element={<Signup/>} />
+            <Route path='/login' element={<Login/>} />
           </Routes>
         </Router>
       </div>
