@@ -39,7 +39,7 @@ function Signup() {
         <form onSubmit={handleSubmit}>
           <input className='textField' ref={emailRef} type='text' placeholder='Email' />
           <input className='textField' ref={passwordRef} type='password' placeholder='Password' />
-          <button disabled={loading} className='button' type='submit'> Create Account </button>
+          <button disabled={loading} className='signup_button' type='submit'> Create Account </button>
         </form>
 
       </div>

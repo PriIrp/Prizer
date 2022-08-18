@@ -27,9 +27,9 @@ function Login() {
 
   return (
     
-    <div className="Home">
+    <div className="LoginPage">
 
-      <div className='home_header'> Welcome to Zello </div>
+      <div className='header'> Welcome to Zello </div>
 
       <div className='loginBox'> 
 
@@ -37,8 +37,8 @@ function Login() {
         <h4 className= 'loginBox_header' id= 'lowerBody'>to continue to Zello</h4>
         
         <form onSubmit={handleSubmit}>
-          <input className='login_input' ref={emailRef} type='text' placeholder='Email' />
-          <input className='login_input' ref={passwordRef} type='password' placeholder='Password' />
+          <input className='textField' ref={emailRef} type='text' placeholder='Email' />
+          <input className='textField' ref={passwordRef} type='password' placeholder='Password' />
           <button disabled={loading} className='login_button' type='submit'> Login </button>
         </form>
 
