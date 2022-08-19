@@ -1,21 +1,26 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Context/AuthContext';
 import './Signup.css';
+import { writeInitialUserData } from '../../Context/Database'
 
 function Signup() {
 
   const emailRef = useRef();
   const passwordRef = useRef();
   const [loading, setLoading] = useState(false);
-  const { signup, currentUser} = useAuth()
+  const { signup } = useAuth()
+  
 
-
+ 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try{
       setLoading(true);
+
       await signup(emailRef.current.value, passwordRef.current.value);
+      writeInitialUserData(false);
+
       alert('Account created successfully');
     } catch {
       alert('Error signing up')
@@ -29,12 +34,12 @@ function Signup() {
     
     <div className="SignupPage">
 
-      <div className='header'> Welcome to Zello </div>
+      <div className='header'> Welcome to Prizer</div>
 
       <div className='card'> 
 
         <h3 className='card_header'> Create an Account </h3>
-        <h4 className= 'card_header' id= 'lowerBody'>to continue to Zello</h4>
+        <h4 className= 'card_header' id= 'lowerBody'>to continue to Prizer</h4>
         
         <form onSubmit={handleSubmit}>
           <input className='textField' ref={emailRef} type='text' placeholder='Email' />

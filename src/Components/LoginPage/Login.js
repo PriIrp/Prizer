@@ -17,11 +17,14 @@ function Login() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       alert('Account opened successfully');
+
     } catch {
       alert('Error signing up')
     }
 
     setLoading(false);
+
+    //Add a route to the Prizer Dashboard
   }
 
 
@@ -29,12 +32,12 @@ function Login() {
     
     <div className="LoginPage">
 
-      <div className='header'> Welcome to Zello </div>
+      <div className='header'> Welcome to Prizer </div>
 
       <div className='loginBox'> 
 
         <h3 className='loginBox_header'> Log in </h3>
-        <h4 className= 'loginBox_header' id= 'lowerBody'>to continue to Zello</h4>
+        <h4 className= 'loginBox_header' id= 'lowerBody'>to continue to Prizer</h4>
         
         <form onSubmit={handleSubmit}>
           <input className='textField' ref={emailRef} type='text' placeholder='Email' />
